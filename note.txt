@@ -1,0 +1,4 @@
+this is the prototype django application, in which i use django default authentication which is more secure than the main application that i have created on master branch.
+
+i think i had to create this project manually . ie - without using any django default authentication that's why i didn't go for that approch.
+because i thought this project is based on php and php doesen't comes with that much of securiety like django.
