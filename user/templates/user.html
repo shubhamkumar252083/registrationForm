@@ -2,13 +2,28 @@
 {% block title %}hello, {{ object.name }}{% endblock title%}
 
 {% block content %}
-<!-- {{object}} -->
-<h1>{{ object.name }}</h1>
-<p>{{ object.email }}</p>
-<p>{{ object.password }}</p>
-<p>{{ object.date }}</p>
-<p>{{ object.image }}</p>
-<img src="{{object.image.url}}" alt="connect" style="max-height:300px">
 
-<a class="navbar-brand" href="{% url 'update_view' id=object.id %}">update</a>
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-7">
+      <div class="card p-3 py-4">
+        <div class="text-center"> <img src="{{object.image.url}}" width="100" class="rounded-circle"> </div>
+        <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">Pro</span>
+          <h1 class="mt-2 mb-0">{{ object.name }}</h1>
+          <h2>{{ object.email }}</h2>
+          <h3>Date of Birth : {{ object.date }}</h3>
+          <div class="px-4 mt-1">
+            <!-- <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. </p> -->
+          </div>
+
+          <div class="buttons"> <button class="btn btn-outline-primary px-4"><a class="navbar-brand"
+                href="{% url 'update_view' id=object.id %}">update</a></button> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

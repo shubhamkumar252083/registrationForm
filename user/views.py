@@ -21,16 +21,15 @@ def register_view(request):
 
 
 def login_view(request):
-
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
-            obj = UserDetails.objects.filter(
+            objects = UserDetails.objects.filter(
                 email=email).filter(password=password)
-            if obj:
-                return render(request, 'user.html', {"object": obj[0]})
+            if objects:
+                return render(request, 'user.html', {"object": objects[0]})
         form = LoginForm()
         context = {
             'form': form,
