@@ -4,4 +4,5 @@ urlpatterns = [
     path("", home_view, name="home_view"),
     path("register/", register_view, name="register_view"),
     path("login/", login_view, name="login_view"),
+    path("update/<int:id>/", update_view, name="update_view"),
 ]

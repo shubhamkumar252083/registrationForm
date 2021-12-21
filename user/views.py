@@ -21,6 +21,7 @@ def register_view(request):
 
 
 def login_view(request):
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -39,3 +40,14 @@ def login_view(request):
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
+
+
+def update_view(request, id):
+    obj = get_object_or_404(UserDetails, id=id)
+    form = RegisterForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form': form
+    }
+    return render(request, "register.html", context)

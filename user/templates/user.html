@@ -9,4 +9,6 @@
 <p>{{ object.date }}</p>
 <p>{{ object.image }}</p>
 <img src="{{object.image.url}}" alt="connect" style="max-height:300px">
+
+<a class="navbar-brand" href="{% url 'update_view' id=object.id %}">update</a>
 {% endblock %}
