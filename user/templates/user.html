@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}hello, {{ object.name }}{% endblock title%}
+
+{% block content %}
+<!-- {{object}} -->
+<h1>{{ object.name }}</h1>
+<p>{{ object.email }}</p>
+<p>{{ object.password }}</p>
+<p>{{ object.date }}</p>
+<p>{{ object.image }}</p>
+<img src="{{object.image.url}}" alt="connect" style="max-height:300px">
+{% endblock %}
